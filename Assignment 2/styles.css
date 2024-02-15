@@ -1,0 +1,88 @@
+/* External CSS Styles */
+body {
+    background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%) !important; /* Gradient background */
+    font-family: Arial, sans-serif; /* Use a common font */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 50%; /* Adjust width as needed */
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333; /* Dark text color */
+}
+
+table {
+    width: 100%;
+}
+
+table tr td {
+    padding: 10px;
+}
+
+table tr td label {
+    display: inline-block;
+    width: 120px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+button {
+    margin-top: 10px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: calc(100% - 24px); /* Adjusting width for padding */
+    padding: 8px;
+    margin: 4px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+input[type="text"]:hover,
+input[type="password"]:hover,
+input[type="email"]:hover,
+input[type="tel"]:hover,
+select:hover,
+textarea:hover {
+    border-color: #999; /* Light gray border on hover */
+}
+
+input[type="radio"]:hover,
+input[type="checkbox"]:hover {
+    cursor: pointer;
+}
+
+textarea {
+    height: 100px;
+}
