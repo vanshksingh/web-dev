@@ -16,7 +16,10 @@ body {
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
-}
+
+        cursor: url('/Users/vanshkumarsingh/Downloads/88a90d350668f740c634f02566a25d13.jpg'), auto;
+    }
+    
 
 header {
     text-align: center;

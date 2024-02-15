@@ -1,0 +1,101 @@
+/* External CSS Styles */
+
+/* Global Styles */
+body {
+    background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%) !important; /* Gradient background */
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.box {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+/* Form Styles */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Merge table borders */
+}
+
+th, td {
+    padding: 10px;
+}
+
+th {
+    text-align: left;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="file"],
+textarea {
+    width: calc(100% - 24px); /* Adjusting width for padding */
+    padding: 8px;
+    margin: 4px 0;
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="radio"] {
+    display: none; /* Hide default radio buttons */
+}
+
+input[type="radio"] + label {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked + label {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .box {
+        width: 90%;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="file"],
+    textarea {
+        width: 100%;
+    }
+}
