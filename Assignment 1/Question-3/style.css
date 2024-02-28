@@ -1,0 +1,83 @@
+/* style.css */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
+    color: #000000;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    border-radius: 20px; /* Rounded container corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2, h3, h4 {
+    color: #555;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 20px;
+    border-radius: 20px; /* Rounded table corners */
+    overflow: hidden; /* Hide overflow to prevent border-radius clipping */
+}
+
+th, td {
+    border: none; /* Remove default table borders */
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-image: linear-gradient(to top, #fcc5e4 0%, #fda34b 15%, #ff7882 35%, #c8699e 52%, #7046aa 71%, #0c1db8 87%, #020f75 100%);
+    color: #fff;
+}
+
+/* Course Information Styles */
+.course-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 20px;
+    border-radius: 20px; /* Rounded table corners */
+    overflow: hidden; /* Hide overflow to prevent border-radius clipping */
+}
+
+.course-table th, .course-table td {
+    border: none; /* Remove default table borders */
+    padding: 10px;
+    text-align: left;
+}
+
+.course-table th {
+    background-color: #5bc0de; /* Blue */
+    color: #fff;
+}
+
+/* Additional Styles */
+p {
+    margin-bottom: 10px;
+}
+
+/* Colors */
+.day-color {
+    background-color: #ffcc80; /* Light Orange */
+}
+
+.slot-color {
+    background-color: #81c784; /* Light Green */
+}
+
+.course-color {
+    background-color: #90caf9; /* Light Blue */
+}

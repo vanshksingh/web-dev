@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<head>
+
+<title>Recursive Table</title>
+
+</head>
+<body>
+
+<table ]'[;.l vc<!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursive Table</title>
+    <style>
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 8px;
+      }
+    </style>
+    </head>
+    <body>
+    
+    <table id="myTable">
+      <caption>Recursive Table</caption>
+      <tbody>
+      </tbody>
+    </table>
+    
+    <script>
+    function createTable(rows, cols, table, currentRow = 0) {
+      if (currentRow === rows) {
+        return;
+      }
+    
+      var newRow = table.insertRow();
+    
+      for (var j = 0; j < cols; j++) {
+        var cell = newRow.insertCell();
+        cell.appendChild(document.createTextNode(currentRow * cols + j + 1));
+      }
+    
+      createTable(rows, cols, table, currentRow + 1);
+    }
+    
+    // Define the number of rows and columns
+    var numRows = 5;
+    var numCols = 3;
+    var table = document.getElementById('myTable').getElementsByTagName('tbody')[0];
+    
+    // Call the function to create the table
+    createTable(numRows, numCols, table);
+    </script>
+    
+    </body>
+    </html>
+    "?]'>
+  <caption>Recursive Table</caption>
+  <tbody>
+  </tbody>
+</table>
+
+<script>
+function createTable(rows, cols, table, currentRow = 0) {
+  if (currentRow === rows) {
+    return;
+  }
+
+  var newRow = table.insertRow();
+
+  for (var j = 0; j < cols; j++) {
+    var cell = newRow.insertCell();
+    cell.appendChild(document.createTextNode(currentRow * cols + j + 1));
+  }
+
+  createTable(rows, cols, table, currentRow + 1);
+}
+
+
+var numRows = 5;
+var numCols = 3;
+var table = document.getElementById('myTable').getElementsByTagName('tbody')[0];
+
+
+createTable(numRows, numCols, table);
+</script>
+
+</body>
+</html>
