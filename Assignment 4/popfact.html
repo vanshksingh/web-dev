@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Popup Functions</title>
+</head>
+<body>
+
+<script>
+  function calculateFactorial() {
+    let n = parseInt(prompt("Enter a number to calculate its factorial:"));
+
+    if (!isNaN(n)) {
+      let factorial = 1;
+      
+      for (let i = 1; i <= n; i++) {
+        factorial *= i;
+      }
+    
+      alert("Factorial of " + n + " is: " + factorial);
+    } else {
+      alert("Invalid input. Please enter a valid number.");
+    }
+  }
+
+  function displayMultiplicationTable() {
+
+    let n = parseInt(prompt("Enter a number to display its multiplication table:"));
+
+
+    if (!isNaN(n)) {
+      let table = "";
+      
+ 
+      for (let i = 1; i <= 10; i++) {
+        table += n + " x " + i + " = " + (n * i) + "\n";
+      }
+      
+
+      alert("Multiplication table of " + n + ":\n\n" + table);
+    } else {
+      alert("Invalid input. Please enter a valid number.");
+    }
+  }
+</script>
+<h3>Factorial and Table Using Popup</h6>
+<button onclick="calculateFactorial()">Factorial of a Number</button>
+<button onclick="displayMultiplicationTable()">Multiplication Table</button>
+
+</body>
+</html>

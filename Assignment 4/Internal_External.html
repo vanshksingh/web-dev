@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal and External JavaScript Example</title>
+    <script src="Internal_External.js" defer></script>
+    <script>
+        function greet() {
+            var name = document.getElementById("name").value;
+            alert("Hello, " + name + " from internal JavaScript!");
+        }
+    </script>
+</head>
+<body>
+    <h1>Internal and External JavaScript Example</h1>
+    <input type="text" id="name" placeholder="Enter your name">
+    <br><br>
+    <button onclick="greet()">Say Hello (Internal)</button>
+    <button id="externalBtn">Say Hello (External)</button>
+</body>
+</html>

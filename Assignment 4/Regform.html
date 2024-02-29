@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 600px;
+    margin: 50px auto;
+  }
+  .left {
+    width: 45%;
+  }
+  .right {
+    width: 45%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .right h2 {
+    text-align: center;
+  }
+  .right p {
+    margin: 10px 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="left">
+    <form id="registrationForm">
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name"><br>
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email"><br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+  <div class="right" id="registrationInfo">
+    <h2>Registration Information</h2>
+  </div>
+</div>
+
+<script>
+  document.getElementById('registrationForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+   
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+
+    var registrationInfoDiv = document.getElementById('registrationInfo');
+    registrationInfoDiv.innerHTML = '<h2>Registration Information</h2>';
+    registrationInfoDiv.innerHTML += '<p><strong>Name:</strong> ' + name + '</p>';
+    registrationInfoDiv.innerHTML += '<p><strong>Email:</strong> ' + email + '</p>';
+  });
+</script>
+
+</body>
+</html>
