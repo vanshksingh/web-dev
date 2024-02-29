@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            max-width: 800px;
+            background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container,
+        .output-container {
+            width: 45%;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .output-container {
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+        }
+
+        header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        form table {
+            width: 100%;
+        }
+
+        form table tr {
+            margin-bottom: 20px;
+        }
+
+        form table td {
+            padding: 8px 0;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: calc(100% - 16px); /* Considering 8px padding on both sides */
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .output-container h2 {
+            margin-top: 0;
+        }
+
+        .output-container p {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-container">
+            <header>Registration Page</header>
+            <form id="registrationForm">
+                <table>
+                    <tr>
+                        <td><label for="name">Name:</label></td>
+                        <td><input type="text" id="name" name="name" required size="30"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">E-mail ID:</label></td>
+                        <td><input type="email" id="email" name="email" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="phone">Phone Number:</label></td>
+                        <td><input type="tel" id="phone" name="phone" required></td>
+                    </tr>
+                    <tr>
+                        <td><label>Gender:</label></td>
+                        <td>
+                            <label for="male">Male</label>
+                            <input type="radio" id="male" name="gender" value="male" required>
+                            <label for="female">Female</label>
+                            <input type="radio" id="female" name="gender" value="female" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="address">Address:</label></td>
+                        <td><textarea id="address" name="address" rows="4" required></textarea></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button type="submit">Submit</button>
+                            <button type="reset">Reset</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="output-container" id="outputContainer">
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            var formData = new FormData(this); // Get form data
+            var output = "<h2>Submitted Data:</h2>";
+            formData.forEach(function(value, key) {
+                output += "<p><strong>" + key + ":</strong> " + value + "</p>";
+            });
+            document.getElementById('outputContainer').innerHTML = output; // Display submitted data
+        });
+    </script>
+</body>
+
+</html>
