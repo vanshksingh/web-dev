@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>String Validation</title>
+  <style>
+    .container {
+      margin: 50px auto;
+      text-align: center;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      margin: 10px;
+      width: 200px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    p {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>String Validation</h2>
+    <label for="input">Enter a string:</label>
+    <input type="text" id="input" placeholder="Type here...">
+    <button id="validateBtn">Validate</button>
+    <p id="result"></p>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var validateBtn = document.getElementById("validateBtn");
+      var inputField = document.getElementById("input");
+      var resultParagraph = document.getElementById("result");
+
+      validateBtn.addEventListener("click", function() {
+        var input = inputField.value.trim();
+        if (isValidInput(input)) {
+          resultParagraph.textContent = "Valid input!";
+          resultParagraph.style.color = "green";
+        } else {
+          resultParagraph.textContent = "Invalid input! Please enter only letters (uppercase or lowercase) and spaces.";
+          resultParagraph.style.color = "red";
+        }
+      });
+
+      function isValidInput(input) {
+        // Regular expression to match only letters (uppercase or lowercase) and spaces
+        var regex = /^[a-zA-Z\s]+$/;
+        return regex.test(input);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form Validation</title>
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var email = document.getElementById("email").value;
+            var mobile = document.getElementById("mobile").value;
+            var pan = document.getElementById("pan").value;
+            var lastName = document.getElementById("lastName").value;
+            var address = document.getElementById("address").value;
+
+            var usernameRegex = /^[a-zA-Z][a-zA-Z .]{2,29}$/;
+            var passwordRegex = /^(?=.*\d)(?=.*[!@#$%^&*])[0-9a-zA-Z!@#$%^&*]{8,20}$/;
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var mobileRegex = /^\d{10}$/;
+            var panRegex = /^[A-Za-z]{5}\d{4}[A-Za-z]$/;
+
+            if (!username.match(usernameRegex)) {
+                alert("Invalid username format. Please enter a valid username.");
+                return false;
+            }
+
+            if (!password.match(passwordRegex)) {
+                alert("Invalid password format. Please enter a valid password.");
+                return false;
+            }
+
+            if (!email.match(emailRegex)) {
+                alert("Invalid email format. Please enter a valid email address.");
+                return false;
+            }
+
+            if (!mobile.match(mobileRegex)) {
+                alert("Invalid mobile number format. Please enter a valid 10-digit mobile number.");
+                return false;
+            }
+
+            if (!pan.match(panRegex)) {
+                alert("Invalid PAN card format. Please enter a valid PAN card number.");
+                return false;
+            }
+
+            if (lastName.trim() === "") {
+                alert("Last name cannot be empty. Please enter your last name.");
+                return false;
+            }
+
+            if (address.trim() === "") {
+                alert("Address cannot be empty. Please enter your address.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Registration Form</h2>
+    <form onsubmit="return validateForm()">
+        <label for="username">User Name:</label><br>
+        <input type="text" id="username" name="username"><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email"><br><br>
+
+        <label for="mobile">Mobile Number:</label><br>
+        <input type="text" id="mobile" name="mobile"><br><br>
+
+        <label for="pan">PAN Card:</label><br>
+        <input type="text" id="pan" name="pan"><br><br>
+
+        <label for="lastName">Last Name:</label><br>
+        <input type="text" id="lastName" name="lastName"><br><br>
+
+        <label for="address">Address:</label><br>
+        <textarea id="address" name="address"></textarea><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>

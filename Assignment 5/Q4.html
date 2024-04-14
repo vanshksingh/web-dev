@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Average Age</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculate Average Age</h1>
+        <label for="peopleInput">Enter people's information:</label>
+        <input type="text" id="peopleInput" placeholder="e.g., John:30, Alice:25, Bob:35">
+        <button onclick="calculateAverage()">Calculate</button>
+        <p id="averageAgeResult"></p>
+    </div>
+
+    <script>
+        function getAverageAge(people) {
+            if (people.length === 0) {
+                return 0;
+            }
+
+            const sumOfAges = people.reduce((total, person) => total + person.age, 0);
+            const averageAge = sumOfAges / people.length;
+
+            return averageAge;
+        }
+
+        function calculateAverage() {
+            const input = document.getElementById('peopleInput').value;
+            const peopleArray = input.split(',').map(item => {
+                const [name, age] = item.trim().split(':');
+                return { name: name.trim(), age: parseInt(age.trim()) };
+            });
+
+            const averageAge = getAverageAge(peopleArray);
+
+            const resultElement = document.getElementById('averageAgeResult');
+            resultElement.textContent = `Average Age: ${averageAge}`;
+        }
+    </script>
+</body>
+</html>

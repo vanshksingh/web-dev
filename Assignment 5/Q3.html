@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Number to Words Converter</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .container {
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Number to Words Converter</h1>
+    <input type="text" id="numberInput" placeholder="Enter a number (0 - 999)">
+    <button onclick="convertToWords()">Convert</button>
+    <p id="result"></p>
+</div>
+
+<script>
+function convertToWords() {
+    var numberInput = document.getElementById("numberInput").value;
+    var result = document.getElementById("result");
+    
+    // Regex pattern to match only digits from 0 to 999
+    var pattern = /^[0-9]{1,3}$/;
+    
+    if (!pattern.test(numberInput)) {
+        result.innerHTML = "Please enter a valid number between 0 and 999.";
+        return;
+    }
+    
+    var words = [
+        "", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
+        "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen",
+        "eighteen", "nineteen"
+    ];
+    var tens = [
+        "", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"
+    ];
+    
+    var num = parseInt(numberInput, 10);
+    var wordsString = "";
+    
+    if (num === 0) {
+        wordsString = "zero";
+    } else {
+        if (num >= 100) {
+            wordsString += words[Math.floor(num / 100)] + " hundred ";
+            num %= 100;
+        }
+        
+        if (num >= 20) {
+            wordsString += tens[Math.floor(num / 10)] + " ";
+            num %= 10;
+        }
+        
+        if (num > 0) {
+            wordsString += words[num];
+        }
+    }
+    
+    result.innerHTML = wordsString;
+}
+</script>
+
+</body>
+</html>

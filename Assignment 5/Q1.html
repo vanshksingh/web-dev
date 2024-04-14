@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    form {
+        max-width: 400px;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input[type="text"], input[type="password"], input[type="email"], input[type="tel"] {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin: 5px 0;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    .error {
+        color: red;
+    }
+</style>
+</head>
+<body>
+<form id="registrationForm" onsubmit="return validateRegistration()">
+    <label for="userName">User Name:</label>
+    <input type="text" id="userName" name="userName">
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+
+    <label for="mobileNumber">Mobile Number:</label>
+    <input type="tel" id="mobileNumber" name="mobileNumber">
+
+    <label for="panCard">PAN Card:</label>
+    <input type="text" id="panCard" name="panCard">
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName">
+
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address">
+
+    <input type="submit" value="Register">
+</form>
+
+<script>
+function validateRegistration() {
+    var userName = document.getElementById("userName").value;
+    var password = document.getElementById("password").value;
+    var email = document.getElementById("email").value;
+    var mobileNumber = document.getElementById("mobileNumber").value;
+    var panCard = document.getElementById("panCard").value;
+    var lastName = document.getElementById("lastName").value;
+    var address = document.getElementById("address").value;
+
+    // Regular expressions for validation
+    var userNameRegex = /^[a-zA-Z][a-zA-Z .]{2,29}$/;
+    var passwordRegex = /^(?=\d)(?=[!@#$%^&*])(?=.*[a-zA-Z]).{8,20}$/;
+    var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    var mobileRegex = /^\d{10}$/;
+    var panCardRegex = /^[A-Z]{5}[0-9]{4}[A-Z]$/;
+
+    // Validation for User Name
+    if (!userName.match(userNameRegex)) {
+        alert("Invalid User Name. It should start with an alphabet and can be in the range of 3-30 characters.");
+        return false;
+    }
+
+    // Validation for Password
+    if (!password.match(passwordRegex)) {
+        alert("Invalid Password. It should start with a digit, followed by a special symbol, and be 8-20 characters long.");
+        return false;
+    }
+
+    // Validation for Email
+    if (!email.match(emailRegex)) {
+        alert("Invalid Email.");
+        return false;
+    }
+
+    // Validation for Mobile Number
+    if (!mobileNumber.match(mobileRegex)) {
+        alert("Invalid Mobile Number. It should contain exactly 10 digits.");
+        return false;
+    }
+
+    // Validation for PAN Card
+    if (!panCard.match(panCardRegex)) {
+        alert("Invalid PAN Card format.");
+        return false;
+    }
+
+    // Validation for Last Name and Address
+    if (lastName.trim() === "" || address.trim() === "") {
+        alert("Last Name and Address cannot be empty.");
+        return false;
+    }
+
+    // If all validations pass, return true
+    return true;
+}
+</script>
+</body>
+</html>
